@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Rendezvous</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<img src="\static\logo.png" height ="150px" width="150px">
+			<br><br>
+			
+			<div id= "wrapper" style="text-align:center;">
+				<div id="result">
+					today is...
+					<h2>{{ temperature }}°F</h2>
+					and {{ condition }}, at {{ city }}.
+				</div>
+
+				<div id="result">
+					{% for i in range(0, length) %}
+						<h3>{{ header[i] }}</h3>
+						<b>{{ stuff[i][0] }} </b><br>
+						located at:<br>
+						{% for mem in stuff[i][1] %}
+							{{ mem }}
+						{% endfor %}
+						<br>
+						<hr>
+					{% endfor %}
+				</div>
+			</div>
+				</center>
+			
+			
+		</div>
+	</body>
+
+</html>
